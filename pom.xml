@@ -47,5 +47,6 @@
 
     <modules>
         <module>meditrack-eureka-server</module>
+        <module>meditrack-identity-service</module>
     </modules>
 </project>
