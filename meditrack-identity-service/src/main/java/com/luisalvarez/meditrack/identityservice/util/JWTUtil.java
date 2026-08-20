@@ -1,7 +1,6 @@
 package com.luisalvarez.meditrack.identityservice.util;
 
-import com.luisalvarez.meditrack.identityservice.DTO.UserRequestDto;
-import com.luisalvarez.meditrack.identityservice.entity.Role;
+import com.luisalvarez.meditrack.identityservice.entity.UserPrincipal;
 import io.jsonwebtoken.Jwts;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,9 +15,10 @@ public class JWTUtil {
     private final long TIME_EXP = 1000*60*60;
     private final PrivateKey privateKey;
 
-    public String generateToken(UserRequestDto userRequestDto){
+    public String generateToken(UserPrincipal userPrincipal){
         return Jwts.builder()
-                .subject(userRequestDto.email())
+                .subject(userPrincipal.getUsername())
+                .claim("role", userPrincipal.getRole().name())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis()+TIME_EXP))
                 .signWith(privateKey, Jwts.SIG.RS256)
