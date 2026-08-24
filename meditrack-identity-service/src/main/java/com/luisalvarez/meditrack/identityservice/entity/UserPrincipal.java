@@ -28,6 +28,10 @@ public class UserPrincipal implements UserDetails {
         return user.getEmail();
     }
 
+    public Role getRole(){
+        return user.getRole();
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
