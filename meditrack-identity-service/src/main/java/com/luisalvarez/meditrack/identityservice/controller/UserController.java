@@ -1,8 +1,8 @@
 package com.luisalvarez.meditrack.identityservice.controller;
 
-import com.luisalvarez.meditrack.identityservice.DTO.UserRequestDto;
+import com.luisalvarez.meditrack.identityservice.dto.UserRequestDto;
 import com.luisalvarez.meditrack.identityservice.entity.UserPrincipal;
-import com.luisalvarez.meditrack.identityservice.util.JWTUtil;
+import com.luisalvarez.meditrack.identityservice.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final AuthenticationManager authenticationManager;
-    private final JWTUtil jwtUtil;
+    private final JwtUtil jwtUtil;
 
     @PostMapping("/authenticate")
     public ResponseEntity<String> generateToken(@RequestBody UserRequestDto userRequestDto) {

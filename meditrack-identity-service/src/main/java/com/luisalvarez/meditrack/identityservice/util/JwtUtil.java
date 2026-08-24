@@ -2,7 +2,6 @@ package com.luisalvarez.meditrack.identityservice.util;
 
 import com.luisalvarez.meditrack.identityservice.entity.UserPrincipal;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +13,7 @@ import java.util.Date;
 
 @Component
 @RequiredArgsConstructor
-public class JWTUtil {
+public class JwtUtil {
 
     private final long TIME_EXP = 1000*60*60;
     private final PrivateKey privateKey;

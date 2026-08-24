@@ -1,5 +1,5 @@
 package com.luisalvarez.meditrack.identityservice.config;
-import com.luisalvarez.meditrack.identityservice.filter.JWTAuthFilter;
+import com.luisalvarez.meditrack.identityservice.filter.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
-    private final JWTAuthFilter jWtAuthFilter;
+    private final JwtAuthFilter jWtAuthFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

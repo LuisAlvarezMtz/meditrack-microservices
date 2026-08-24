@@ -1,7 +1,7 @@
 package com.luisalvarez.meditrack.identityservice.filter;
 
 import com.luisalvarez.meditrack.identityservice.service.CustomUserDetailService;
-import com.luisalvarez.meditrack.identityservice.util.JWTUtil;
+import com.luisalvarez.meditrack.identityservice.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,9 +18,9 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-public class JWTAuthFilter extends OncePerRequestFilter {
+public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final JWTUtil jwtUtil;
+    private final JwtUtil jwtUtil;
     private final CustomUserDetailService customUserDetailService;
 
     @Override
