@@ -40,4 +40,9 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
     }
+
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "Hello world";
+    }
 }
