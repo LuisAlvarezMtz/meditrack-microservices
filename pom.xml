@@ -10,13 +10,22 @@
 
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>4.1.0</spring-boot.version>
+        <spring-boot.version>4.1.1</spring-boot.version>
         <spring-cloud.version>2025.1.2</spring-cloud.version>
         <jjwt.version>0.12.6</jjwt.version>
+        <testcontainers.version>2.0.2</testcontainers.version>
     </properties>
 
     <dependencyManagement>
+
         <dependencies>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -71,5 +80,6 @@
     <modules>
         <module>meditrack-eureka-server</module>
         <module>meditrack-identity-service</module>
+        <module>meditrack-medicine-service</module>
     </modules>
 </project>
