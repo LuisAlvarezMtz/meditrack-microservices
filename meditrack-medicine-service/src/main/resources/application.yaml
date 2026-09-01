@@ -1,3 +1,10 @@
 spring:
   application:
     name: meditrack-medicine-service
+  threads:
+    virtual:
+      enabled: true
+  mongodb:
+    uri: mongodb://root:password@localhost:27017/medicine-db?authSource=admin
+server:
+  port: 8081
